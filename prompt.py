@@ -1,10 +1,8 @@
 import base64
-import vertexai
 from vertexai.generative_models import GenerativeModel, Part, SafetySetting, GenerationConfig
 
 
 def generate(conditions):
-    vertexai.init(project="tesonet-aihack24vil-6123", location="europe-central2")
     model = GenerativeModel(
         "gemini-1.5-pro-002",
     )

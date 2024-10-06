@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 import ngrok
 from flask_cors import CORS
 from extractData import getConditionsArray
+import vertexai
 
 conditionsArray = getConditionsArray()
 
@@ -33,4 +34,5 @@ def simulate():
     return data
 
 if __name__ == '__main__':
+    vertexai.init(project="tesonet-aihack24vil-6123", location="europe-central2")
     app.run(port=5000, debug=True)
